@@ -1,13 +1,25 @@
-﻿using GiftOfTheGivers.Web.Models;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
-public class Donor
+namespace GiftOfTheGivers.Web.Models
 {
-    public int DonorID { get; set; } // Primary Key
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Phone { get; set; }
-    public System.DateTime CreatedAt { get; set; } = System.DateTime.UtcNow;
+    public class Donor
+    {
+        [Key]
+        public int DonorID { get; set; }
 
-    public ICollection<Donation> Donations { get; set; }
+        [Required]
+        public required string FirstName { get; set; }
+
+        [Required]
+        public required string LastName { get; set; }
+
+        [Required]
+        public required string ContactNumber { get; set; }
+
+        [Required]
+        public required string Email { get; set; }
+
+        // Navigation property for donations (Collection)
+        public ICollection<Donation> Donations { get; set; } = new List<Donation>();
+    }
 }

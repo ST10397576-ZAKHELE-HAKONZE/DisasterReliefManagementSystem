@@ -11,7 +11,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
     }
 
-    // Add DbSets for all custom models
+ 
     public DbSet<Donor> Donors { get; set; }
     public DbSet<Donation> Donations { get; set; }
     public DbSet<ReliefProject> ReliefProjects { get; set; }
@@ -28,6 +28,22 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
             .HasOne(va => va.Project)
             .WithMany(rp => rp.Assignments)
             .HasForeignKey(va => va.ProjectID)
-            .OnDelete(DeleteBehavior.Restrict); // <-- THE CRITICAL CHANGE
+            .OnDelete(DeleteBehavior.Restrict);
+
+        // Inside the OnModelCreating method, after base.OnModelCreating(builder);
+
+        // Prevent cascade delete conflict between Donor and Donation
+        builder.Entity<Donation>()
+            .HasOne(d => d.Donor)
+            .WithMany(dr => dr.Donations)
+            .HasForeignKey(d => d.DonorID)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        // Prevent cascade delete conflict between ApplicationUser and Donation
+        builder.Entity<Donation>()
+            .HasOne(d => d.RecordedByUser)
+            .WithMany() // Assuming ApplicationUser doesn't need a collection back to Donation
+            .HasForeignKey(d => d.RecordedByUserId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

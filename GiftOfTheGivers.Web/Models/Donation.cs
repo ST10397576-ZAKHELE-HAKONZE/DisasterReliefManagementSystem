@@ -1,24 +1,35 @@
-﻿using GiftOfTheGivers.Web.Models;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class Donation
+namespace GiftOfTheGivers.Web.Models
 {
-    public int DonationID { get; set; } // Primary Key
-    public string ItemType { get; set; }
-    public int Quantity { get; set; }
+    public class Donation
+    {
+        [Key]
+        public int DonationID { get; set; }
 
-    [Column(TypeName = "decimal(18, 2)")]
-    public decimal ValueZAR { get; set; }
-    public System.DateTime DonationDate { get; set; } = System.DateTime.UtcNow;
-    public string Status { get; set; }
+        [Required]
+        public required string Type { get; set; } // e.g., "Cash", "Goods"
 
-    // Foreign Keys (IdentityUser PK is string)
-    public int? DonorID { get; set; } // FK to Donors (Nullable: if logged-in user donates)
-    public virtual Donor Donor { get; set; }
+        [Required]
+        [Column(TypeName = "decimal(18, 2)")] // Ensure precise money format in SQL
+        public decimal Amount { get; set; } // Use 0 for goods donations, or a value.
 
-    public string? UserId { get; set; } // FK to ApplicationUser (Nullable: if anonymous donor)
-    public virtual ApplicationUser User { get; set; }
+        [Required]
+        public required string Description { get; set; } // Detail of goods, e.g., "5 boxes of canned food"
 
-    public int ProjectID { get; set; } // FK to ReliefProject (Must link donation to a project)
-    public virtual ReliefProject Project { get; set; }
+        public DateTime DateReceived { get; set; } = DateTime.UtcNow;
+
+        [Required]
+        public required string Status { get; set; } // e.g., "Received", "In Transit", "Allocated"
+
+        // Foreign Key to Donor
+        public int DonorID { get; set; }
+        public required virtual Donor Donor { get; set; }
+
+        // Foreign Key to ApplicationUser (Staff member who logged the donation)
+        [Required]
+        public required string RecordedByUserId { get; set; }
+        public required virtual ApplicationUser RecordedByUser { get; set; }
+    }
 }

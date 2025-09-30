@@ -1,17 +1,31 @@
-﻿using GiftOfTheGivers.Web.Models;
 using Microsoft.AspNetCore.Identity;
-using System.Collections.Generic;
+using System;
+using System.ComponentModel.DataAnnotations;
 
-// Extends IdentityUser to add custom properties
-public class ApplicationUser : IdentityUser
+namespace GiftOfTheGivers.Web.Models 
 {
-    public string Name { get; set; }
-    public string Skills { get; set; }
-    public System.DateTime CreatedAt { get; set; } = System.DateTime.UtcNow;
+    // Inherit from IdentityUser to get the default Identity fields (Email, PasswordHash, etc.)
+    public class ApplicationUser : IdentityUser
+    {
+        // Add your custom properties here
+        [Required]
+        public string FirstName { get; set; }
 
-    // Navigation Properties (Relationships)
-    public ICollection<Donation> Donations { get; set; }
-    public ICollection<VolunteerAssignment> Assignments { get; set; }
-    public ICollection<IncidentReport> ReportedIncidents { get; set; }
-    public ICollection<ReliefProject> CoordinatedProjects { get; set; }
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(13)] // Added a max length appropriate for an ID number
+        public string IDNumber { get; set; }
+
+        [Required]
+        public DateTime DateOfBirth { get; set; }
+
+        [Required]
+        public string Gender { get; set; }
+
+        [Required]
+        public string UserType { get; set; }
+    }
+
 }

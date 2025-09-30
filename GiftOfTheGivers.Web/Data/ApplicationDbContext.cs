@@ -1,12 +1,11 @@
-﻿// ApplicationDbContext.cs (located in Data folder)
-
+using GiftOfTheGivers.Web.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 // Make sure the class name matches the file name: ApplicationDbContext
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
-    // The default constructor is fine
+
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {

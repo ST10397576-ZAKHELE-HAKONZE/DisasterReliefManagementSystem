@@ -1,11 +1,11 @@
-using GiftOfTheGivers.Web.Models;
+﻿using GiftOfTheGivers.Web.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 // Make sure the class name matches the file name: ApplicationDbContext
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
-
+    // The default constructor is fine
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
@@ -23,10 +23,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         base.OnModelCreating(builder);
 
-        // ... (Your existing code for Donation relationships)
-
         // FIX FOR CASCADE DELETE ERROR: Set delete behavior to NO ACTION
-        // This resolves the multiple cascade path issue between User, Project, and Assignments
         builder.Entity<VolunteerAssignment>()
             .HasOne(va => va.Project)
             .WithMany(rp => rp.Assignments)

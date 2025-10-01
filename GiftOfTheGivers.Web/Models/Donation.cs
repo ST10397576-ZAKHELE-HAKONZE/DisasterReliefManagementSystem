@@ -31,5 +31,10 @@ namespace GiftOfTheGivers.Web.Models
         [Required]
         public required string RecordedByUserId { get; set; }
         public required virtual ApplicationUser RecordedByUser { get; set; }
+
+        public int? ReliefProjectProjectID { get; set; }
+
+        [ForeignKey("ReliefProjectProjectID")]
+        public ReliefProject ReliefProject { get; set; }
     }
 }

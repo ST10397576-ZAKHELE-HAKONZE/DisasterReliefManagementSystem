@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiftOfTheGivers.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250930203230_AddDonorsAndDonations")]
-    partial class AddDonorsAndDonations
+    [Migration("20250930234017_FinalSchemaUpdate")]
+    partial class FinalSchemaUpdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

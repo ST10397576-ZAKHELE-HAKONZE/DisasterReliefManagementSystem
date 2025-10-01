@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiftOfTheGivers.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250927143707_InitialSchemaSetup")]
+    partial class InitialSchemaSetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +24,7 @@ namespace GiftOfTheGivers.Web.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("GiftOfTheGivers.Web.Models.ApplicationUser", b =>
+            modelBuilder.Entity("ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -33,7 +36,7 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -43,28 +46,15 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IDNumber")
-                        .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -86,16 +76,16 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Skills")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("UserType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -110,7 +100,7 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("GiftOfTheGivers.Web.Models.Donation", b =>
+            modelBuilder.Entity("Donation", b =>
                 {
                     b.Property<int>("DonationID")
                         .ValueGeneratedOnAdd()
@@ -118,46 +108,44 @@ namespace GiftOfTheGivers.Web.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DonationID"));
 
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18, 2)");
-
-                    b.Property<DateTime>("DateReceived")
+                    b.Property<DateTime>("DonationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
+                    b.Property<int?>("DonorID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ItemType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DonorID")
+                    b.Property<int>("ProjectID")
                         .HasColumnType("int");
 
-                    b.Property<string>("RecordedByUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("ReliefProjectProjectID")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("ValueZAR")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("DonationID");
 
                     b.HasIndex("DonorID");
 
-                    b.HasIndex("RecordedByUserId");
+                    b.HasIndex("ProjectID");
 
-                    b.HasIndex("ReliefProjectProjectID");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Donations");
                 });
 
-            modelBuilder.Entity("GiftOfTheGivers.Web.Models.Donor", b =>
+            modelBuilder.Entity("Donor", b =>
                 {
                     b.Property<int>("DonorID")
                         .ValueGeneratedOnAdd()
@@ -165,19 +153,18 @@ namespace GiftOfTheGivers.Web.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DonorID"));
 
-                    b.Property<string>("ContactNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -381,6 +368,9 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -388,6 +378,9 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -435,33 +428,33 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.ToTable("VolunteerAssignments");
                 });
 
-            modelBuilder.Entity("GiftOfTheGivers.Web.Models.Donation", b =>
+            modelBuilder.Entity("Donation", b =>
                 {
-                    b.HasOne("GiftOfTheGivers.Web.Models.Donor", "Donor")
+                    b.HasOne("Donor", "Donor")
                         .WithMany("Donations")
-                        .HasForeignKey("DonorID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasForeignKey("DonorID");
+
+                    b.HasOne("ReliefProject", "Project")
+                        .WithMany("Donations")
+                        .HasForeignKey("ProjectID")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", "RecordedByUser")
-                        .WithMany()
-                        .HasForeignKey("RecordedByUserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("ReliefProject", null)
+                    b.HasOne("ApplicationUser", "User")
                         .WithMany("Donations")
-                        .HasForeignKey("ReliefProjectProjectID");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Donor");
 
-                    b.Navigation("RecordedByUser");
+                    b.Navigation("Project");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("IncidentReport", b =>
                 {
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", "ReportedByUser")
-                        .WithMany()
+                    b.HasOne("ApplicationUser", "ReportedByUser")
+                        .WithMany("ReportedIncidents")
                         .HasForeignKey("ReportedByUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -480,7 +473,7 @@ namespace GiftOfTheGivers.Web.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", null)
+                    b.HasOne("ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -489,7 +482,7 @@ namespace GiftOfTheGivers.Web.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", null)
+                    b.HasOne("ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -504,7 +497,7 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", null)
+                    b.HasOne("ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -513,7 +506,7 @@ namespace GiftOfTheGivers.Web.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", null)
+                    b.HasOne("ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -522,8 +515,8 @@ namespace GiftOfTheGivers.Web.Data.Migrations
 
             modelBuilder.Entity("ReliefProject", b =>
                 {
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", "Coordinator")
-                        .WithMany()
+                    b.HasOne("ApplicationUser", "Coordinator")
+                        .WithMany("CoordinatedProjects")
                         .HasForeignKey("CoordinatorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -539,8 +532,8 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", "User")
-                        .WithMany()
+                    b.HasOne("ApplicationUser", "User")
+                        .WithMany("Assignments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -550,7 +543,18 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("GiftOfTheGivers.Web.Models.Donor", b =>
+            modelBuilder.Entity("ApplicationUser", b =>
+                {
+                    b.Navigation("Assignments");
+
+                    b.Navigation("CoordinatedProjects");
+
+                    b.Navigation("Donations");
+
+                    b.Navigation("ReportedIncidents");
+                });
+
+            modelBuilder.Entity("Donor", b =>
                 {
                     b.Navigation("Donations");
                 });

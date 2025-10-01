@@ -35,6 +35,6 @@ namespace GiftOfTheGivers.Web.Models
         public int? ReliefProjectProjectID { get; set; }
 
         [ForeignKey("ReliefProjectProjectID")]
-        public ReliefProject ReliefProject { get; set; }
+        public ReliefProject? ReliefProject { get; set; }
     }
 }

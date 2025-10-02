@@ -1,71 +1,97 @@
 ﻿@model GiftOfTheGivers.Web.Models.Donation
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Record New Donation";
 }
 
-<h1>Create</h1>
+<h1 class="text-center text-success mb-4">Record New Donation</h1>
 
-<h4>Donation</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <!-- Html.GetEnumSelectList automatically generates select options from the DonationType enum -->
-                <select asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.DonationType>()"></select>
-                <span asp-validation-for="Type" class="text-danger"></span>
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg p-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <!-- Donation Type Dropdown (Enum) -->
+                <div class="form-group mb-3">
+                    <label asp-for="Type" class="control-label text-success"></label>
+                    <select asp-for="Type" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.DonationType>()">
+                        <option value="">-- Select Donation Type --</option>
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+
+                <!-- Amount Input -->
+                <div class="form-group mb-3">
+                    <label asp-for="Amount" class="control-label text-success"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+
+                <!-- Description Input -->
+                <div class="form-group mb-3">
+                    <label asp-for="Description" class="control-label text-success"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <!-- Date Received Input -->
+                <div class="form-group mb-3">
+                    <label asp-for="DateReceived" class="control-label text-success"></label>
+                    <input asp-for="DateReceived" class="form-control" />
+                    <span asp-validation-for="DateReceived" class="text-danger"></span>
+                </div>
+
+                <!-- Status Dropdown (Enum) -->
+                <div class="form-group mb-4">
+                    <label asp-for="Status" class="control-label text-success"></label>
+                    <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.DonationStatus>()">
+                        <option value="">-- Select Donation Status --</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+                <!-- Donor Dropdown (ViewBag.DonorID) -->
+                <div class="form-group mb-3">
+                    <label asp-for="DonorID" class="control-label text-success"></label>
+                    <select asp-for="DonorID" class="form-control" asp-items="ViewBag.DonorID">
+                        <option value="">-- Select Donor --</option>
+                    </select>
+                    <span asp-validation-for="DonorID" class="text-danger"></span>
+                </div>
+
+                <!-- Recorded By User Dropdown (ViewBag.RecordedByUserId) -->
+                <div class="form-group mb-3">
+                    <label asp-for="RecordedByUserId" class="control-label text-success"></label>
+                    <select asp-for="RecordedByUserId" class="form-control" asp-items="ViewBag.RecordedByUserId">
+                        <option value="">-- Select Recording User --</option>
+                    </select>
+                    <span asp-validation-for="RecordedByUserId" class="text-danger"></span>
+                </div>
+
+                <!-- Relief Project Dropdown (Optional Link) -->
+                <div class="form-group mb-4">
+                    <label asp-for="ReliefProjectProjectID" class="control-label text-success"></label>
+                    <select asp-for="ReliefProjectProjectID" class="form-control" asp-items="ViewBag.ReliefProjectProjectID">
+                        <option value="">-- Select Relief Project (Optional) --</option>
+                    </select>
+                    <span asp-validation-for="ReliefProjectProjectID" class="text-danger"></span>
+                </div>
+
+                <div class="form-group d-grid gap-2">
+                    <input type="submit" value="Record Donation" class="btn btn-success btn-lg" />
+                </div>
+            </form>
+
+            <div class="mt-3 text-center">
+                <a asp-action="Index" class="text-decoration-none">Back to List</a>
             </div>
-            <div class="form-group">
-                <label asp-for="Amount" class="control-label"></label>
-                <input asp-for="Amount" class="form-control" />
-                <span asp-validation-for="Amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DateReceived" class="control-label"></label>
-                <input asp-for="DateReceived" class="form-control" />
-                <span asp-validation-for="DateReceived" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <!-- Html.GetEnumSelectList automatically generates select options from the DonationStatus enum -->
-                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.DonationStatus>()"></select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DonorID" class="control-label"></label>
-                <select asp-for="DonorID" class ="form-control" asp-items="ViewBag.DonorID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="RecordedByUserId" class="control-label"></label>
-                <select asp-for="RecordedByUserId" class ="form-control" asp-items="ViewBag.RecordedByUserId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReliefProjectProjectID" class="control-label"></label>
-                <select asp-for="ReliefProjectProjectID" class="form-control" asp-items="ViewBag.ReliefProjectProjectID">
-                    <option value="">-- Select Relief Project (Optional) --</option>
-                </select>
-                <span asp-validation-for="ReliefProjectProjectID" class="text-danger"></span>
-            </div>
-            
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

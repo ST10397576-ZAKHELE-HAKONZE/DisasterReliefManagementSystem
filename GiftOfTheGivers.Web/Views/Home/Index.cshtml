@@ -2,7 +2,86 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section: Highlighting the Project's Mission -->
+<div class="p-5 mb-4 bg-light rounded-3 text-center hero-section">
+    <style>
+        /* Custom CSS for a professional, impactful hero section */
+        .hero-section {
+            background-color: #f8f9fa; /* Light background */
+            background-image: linear-gradient(135deg, #e9ecef 0%, #ffffff 100%);
+            padding: 6rem 3rem; /* Extra padding for height */
+            border-radius: 1rem !important;
+        }
+
+            .hero-section h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                color: #0d6efd; /* Primary blue for impact */
+                margin-bottom: 1rem;
+            }
+
+            .hero-section p.lead {
+                font-size: 1.5rem;
+                color: #495057;
+                max-width: 800px;
+                margin: 0 auto 2rem;
+            }
+    </style>
+    <div class="container-fluid py-5">
+        <h1 class="display-4">Rapid Relief & Community Resilience</h1>
+        <p class="lead">
+            Your platform for comprehensive <strong>Disaster Incident Reporting</strong>, efficient <strong>Resource Donation Management</strong>, and coordinated <strong>Volunteer efforts</strong>. Connecting communities with the help they need, quickly and securely.
+        </p>
+        <a class="btn btn-primary btn-lg" href="/Identity/Account/Register" role="button">Get Started Today </a>
+    </div>
 </div>
+
+<!-- Key Features Section: Highlighting the 3 Core Components -->
+<div class="row g-4 text-center">
+
+    <!-- Incident Reporting Card -->
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body p-4">
+                <i class="bi bi-exclamation-octagon-fill text-danger fs-1 mb-3"></i>
+                <h3 class="card-title h4 fw-bold">Incident Reporting</h3>
+                <p class="card-text">Quickly submit details about emergencies, natural disasters, and critical incidents in your area to mobilize timely aid.</p>
+                <!-- Placeholder Link: Replace with actual Incident Reporting Page -->
+                <a href="#" class="btn btn-outline-danger mt-3">Report an Incident</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource Donation Card -->
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body p-4">
+                <i class="bi bi-box-seam-fill text-success fs-1 mb-3"></i>
+                <h3 class="card-title h4 fw-bold">Resource Donations</h3>
+                <p class="card-text">Manage, track, and facilitate the donation of essential supplies like food, clothing, and medical resources to affected zones.</p>
+                <!-- Placeholder Link: Replace with actual Donation Page -->
+                <a href="#" class="btn btn-outline-success mt-3">Donate Resources</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volunteer Management Card -->
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body p-4">
+                <i class="bi bi-person-heart text-warning fs-1 mb-3"></i>
+                <h3 class="card-title h4 fw-bold">Volunteer Engagement</h3>
+                <p class="card-text">Register as a volunteer, browse available tasks, manage your schedule, and track your vital contributions to relief efforts.</p>
+                <!-- Placeholder Link: Replace with actual Volunteer Page -->
+                <a href="/Identity/Account/Register" class="btn btn-outline-warning mt-3">Become a Volunteer</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- You might need to add Bootstrap Icons for the visual appeal (ensure they are included in your project layout) -->
+    <!-- For demonstration purposes, I assume Bootstrap Icons are available or you would link them: -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
+}
+

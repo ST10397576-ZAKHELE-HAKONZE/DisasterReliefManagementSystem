@@ -1,61 +1,68 @@
 ﻿@model IEnumerable<GiftOfTheGivers.Web.Models.VolunteerAssignment>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Volunteer Assignments";
 }
 
-<h1>Index</h1>
+<h1 class="text-center text-primary mb-4">Volunteer Assignments Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p class="text-center mb-4">
+    <a asp-action="Create" class="btn btn-primary btn-lg shadow">Create New Assignment</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Role)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AssignedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Role)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AssignedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-                <!-- FIX: Display the User's Email instead of the UserID -->
-                <td>
-                    @Html.DisplayFor(modelItem => item.User!.Email)
-                </td>
-                <!-- FIX: Display the Project's Title instead of the ProjectID -->
-                <td>
-                    @Html.DisplayFor(modelItem => item.Project!.Title)
-                </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AssignmentID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AssignmentID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AssignmentID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="card shadow-lg p-4">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead>
+                <tr class="table-info">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Role)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssignedDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th class="text-info">
+                        @Html.DisplayNameFor(model => model.User)
+                    </th>
+                    <th class="text-info">
+                        @Html.DisplayNameFor(model => model.Project)
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Role)
+                        </td>
+                        <!-- Date Formatting -->
+                        <td>
+                            @item.AssignedDate.ToString("g")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <!-- FIX: Display the User's Email -->
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User!.Email)
+                        </td>
+                        <!-- FIX: Display the Project's Title -->
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Project!.Title)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.AssignmentID" class="btn btn-sm btn-outline-info">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.AssignmentID" class="btn btn-sm btn-outline-secondary">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.AssignmentID" class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -36,6 +36,7 @@ namespace GiftOfTheGivers.Web.Controllers
             var donation = await _context.Donations
                 .Include(d => d.Donor)
                 .Include(d => d.RecordedByUser)
+                .Include(d => d.ReliefProject)
                 .FirstOrDefaultAsync(m => m.DonationID == id);
             if (donation == null)
             {
@@ -49,7 +50,9 @@ namespace GiftOfTheGivers.Web.Controllers
         public IActionResult Create()
         {
             ViewData["DonorID"] = new SelectList(_context.Donors, "DonorID", "LastName");
-            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Id");
+
+            // FIX: Change "Id" to "Email" to display a friendly user name
+            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Email");
 
             ViewData["ReliefProjectProjectID"] = new SelectList(_context.ReliefProjects, "ProjectID", "Title");
             return View();
@@ -79,7 +82,8 @@ namespace GiftOfTheGivers.Web.Controllers
 
             // Fallback if model state is invalid
             ViewData["DonorID"] = new SelectList(_context.Donors, "DonorID", "LastName", donation.DonorID);
-            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Id", donation.RecordedByUserId);
+            // FIX: Change "Id" to "Email" here too (on failure reload)
+            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Email", donation.RecordedByUserId);
             ViewData["ReliefProjectProjectID"] = new SelectList(_context.ReliefProjects, "ProjectID", "Title", donation.ReliefProjectProjectID);
             return View(donation);
         }
@@ -103,7 +107,8 @@ namespace GiftOfTheGivers.Web.Controllers
 
             // Populate the ViewData lists for the dropdowns, setting the current value
             ViewData["DonorID"] = new SelectList(_context.Donors, "DonorID", "LastName", donation.DonorID);
-            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Id", donation.RecordedByUserId);
+            // FIX: Change "Id" to "Email" for display text
+            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Email", donation.RecordedByUserId);
             ViewData["ReliefProjectProjectID"] = new SelectList(_context.ReliefProjects, "ProjectID", "Title", donation.ReliefProjectProjectID);
 
             return View(donation);
@@ -150,7 +155,7 @@ namespace GiftOfTheGivers.Web.Controllers
 
             // Fallback for POST when validation fails
             ViewData["DonorID"] = new SelectList(_context.Donors, "DonorID", "LastName", donation.DonorID);
-            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Id", donation.RecordedByUserId);
+            ViewData["RecordedByUserId"] = new SelectList(_context.Users, "Id", "Email", donation.RecordedByUserId);
             ViewData["ReliefProjectProjectID"] = new SelectList(_context.ReliefProjects, "ProjectID", "Title", donation.ReliefProjectProjectID);
             return View(donation);
         }
@@ -166,6 +171,7 @@ namespace GiftOfTheGivers.Web.Controllers
             var donation = await _context.Donations
                 .Include(d => d.Donor)
                 .Include(d => d.RecordedByUser)
+                .Include(d => d.ReliefProject)
                 .FirstOrDefaultAsync(m => m.DonationID == id);
             if (donation == null)
             {
@@ -181,13 +187,28 @@ namespace GiftOfTheGivers.Web.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var donation = await _context.Donations.FindAsync(id);
-            if (donation != null)
+
+            if (donation == null)
             {
-                _context.Donations.Remove(donation);
+                // If it's already gone, just redirect back to the list.
+                return RedirectToAction(nameof(Index));
             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _context.Donations.Remove(donation);
+                await _context.SaveChangesAsync();
+
+                // Use TempData for a success message upon redirection
+                TempData["SuccessMessage"] = $"Donation recorded on {donation.DateReceived.ToShortDateString()} has been successfully deleted.";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateException)
+            {
+                // Handle unexpected database errors (like a rare foreign key constraint if something else references Donation)
+                TempData["ErrorMessage"] = "An error occurred while attempting to delete the donation. It may be referenced by other records.";
+                return RedirectToAction(nameof(Delete), new { id = id });
+            }
         }
 
         private bool DonationExists(int id)

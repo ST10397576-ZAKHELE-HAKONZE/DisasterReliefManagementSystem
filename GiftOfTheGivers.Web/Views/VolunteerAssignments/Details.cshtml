@@ -1,48 +1,58 @@
 ﻿@model GiftOfTheGivers.Web.Models.VolunteerAssignment
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Assignment Details";
 }
 
-<h1>Details</h1>
+<h1 class="text-center text-primary mb-4">Assignment Details</h1>
 
-<div>
-    <h4>VolunteerAssignment</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Role)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AssignedDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AssignedDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Project)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Project.CoordinatorId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.AssignmentID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg p-4">
+            <dl class="row">
+                <dt class="col-sm-4 text-info">
+                    @Html.DisplayNameFor(model => model.Role)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Role)
+                </dd>
+
+                <dt class="col-sm-4 text-info">
+                    @Html.DisplayNameFor(model => model.AssignedDate)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.AssignedDate)
+                </dd>
+
+                <dt class="col-sm-4 text-info">
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <dt class="col-sm-4 text-info">
+                    @Html.DisplayNameFor(model => model.User)
+                </dt>
+                <!-- FIX: Display the User's Email instead of the UserID -->
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.User!.Email)
+                </dd>
+
+                <dt class="col-sm-4 text-info">
+                    @Html.DisplayNameFor(model => model.Project)
+                </dt>
+                <!-- FIX: Display the Project's Title instead of the ProjectID -->
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Project!.Title)
+                </dd>
+            </dl>
+
+            <div class="mt-4 text-center">
+                <a asp-action="Edit" asp-route-id="@Model.AssignmentID" class="btn btn-info me-2">Edit</a>
+                <a asp-action="Index" class="btn btn-secondary me-2">Back to List</a>
+                <a asp-action="Delete" asp-route-id="@Model.AssignmentID" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
 </div>

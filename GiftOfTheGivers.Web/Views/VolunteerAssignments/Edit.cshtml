@@ -1,58 +1,82 @@
 ﻿@model GiftOfTheGivers.Web.Models.VolunteerAssignment
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Volunteer Assignment";
 }
 
-<h1>Edit</h1>
+<h1 class="text-center text-primary mb-4">Edit Volunteer Assignment</h1>
 
-<h4>VolunteerAssignment</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="AssignmentID" />
-            <div class="form-group mb-3">
-                <label asp-for="Role" class="control-label text-info"></label>
-                <select asp-for="Role" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.VolunteerRole>()">
-                    <option value="">-- Select Role/Task --</option>
-                </select>
-                <span asp-validation-for="Role" class="text-danger"></span>
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg p-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                
+                <input type="hidden" asp-for="AssignmentID" />
+
+                
+                <div class="form-group mb-3">
+                    <label asp-for="ProjectID" class="control-label text-info"></label>
+                    
+                    <select asp-for="ProjectID" class="form-control" asp-items="ViewBag.ProjectID">
+                        <option value="">-- Select Relief Project --</option>
+                    </select>
+                    <span asp-validation-for="ProjectID" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group mb-3">
+                    <label asp-for="UserId" class="control-label text-info"></label>
+                    
+                    <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId">
+                        <option value="">-- Select Volunteer User (Email) --</option>
+                    </select>
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Role" class="control-label text-info"></label>
+                    
+                    <select asp-for="Role" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.VolunteerRole>()">
+                        <option value="">-- Select Role/Task --</option>
+                    </select>
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group mb-4">
+                    <label asp-for="Status" class="control-label text-info"></label>
+                    
+                    <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.AssignmentStatus>()">
+                        <option value="">-- Select Assignment Status --</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+           
+                <div class="form-group mb-4">
+                    <label asp-for="AssignedDate" class="control-label text-info"></label>
+                    <input asp-for="AssignedDate" class="form-control" readonly />
+                    <span asp-validation-for="AssignedDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group d-grid gap-2">
+                    <input type="submit" value="Save Changes" class="btn btn-primary btn-lg" />
+                </div>
+            </form>
+
+            <div class="mt-3 text-center">
+                <a asp-action="Index" class="text-decoration-none">Back to List</a> |
+                <a asp-action="Details" asp-route-id="@Model.AssignmentID" class="text-decoration-none">View Details</a>
             </div>
-            <div class="form-group">
-                <label asp-for="AssignedDate" class="control-label"></label>
-                <input asp-for="AssignedDate" class="form-control" />
-                <span asp-validation-for="AssignedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-4">
-                <label asp-for="Status" class="control-label text-info"></label>
-                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.AssignmentStatus>()">
-                    <option value="">-- Select Assignment Status --</option>
-                </select>
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectID" class="control-label"></label>
-                <select asp-for="ProjectID" class="form-control" asp-items="ViewBag.ProjectID"></select>
-                <span asp-validation-for="ProjectID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

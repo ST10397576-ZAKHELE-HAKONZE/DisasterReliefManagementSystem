@@ -1,42 +1,35 @@
 ﻿@model GiftOfTheGivers.Web.Models.Donor
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Donor Details";
 }
 
-<h1>Details</h1>
+<h1 class="text-center text-primary mb-4">Donor Details</h1>
 
-<div>
-    <h4>Donor</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ContactNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ContactNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.DonorID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg p-4">
+            <h4 class="text-primary mb-3">Donor Information</h4>
+            <hr />
+
+            <dl class="row mb-0">
+                <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.FirstName)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.FirstName)</dd>
+
+                <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.LastName)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.LastName)</dd>
+
+                <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.ContactNumber)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ContactNumber)</dd>
+
+                <dt class="col-sm-4 fw-bold">@Html.DisplayNameFor(model => model.Email)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+            </dl>
+
+            <div class="d-flex justify-content-between mt-4">
+                <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+                <a asp-action="Edit" asp-route-id="@Model?.DonorID" class="btn btn-primary">Edit Donor</a>
+            </div>
+        </div>
+    </div>
 </div>

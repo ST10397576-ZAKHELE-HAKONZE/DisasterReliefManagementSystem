@@ -1,60 +1,101 @@
 ﻿@model ReliefProject
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete Project";
 }
 
-<h1>Delete</h1>
+@using GiftOfTheGivers.Web.Models
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ReliefProject</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Location)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        
-        
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Coordinator)
-        </dt>
-        <dd class="col-sm-10">
-            @if (Model.Coordinator != null)
-            {
-                @Model.Coordinator.Email
-            }
-            else
-            {
-                @:No Coordinator Assigned
-            }
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ProjectID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<h1 class="text-center text-danger mb-4">Delete Relief Project</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-7">
+        <div class="card shadow-lg p-4 border-danger">
+            <div class="card-body">
+                <h3 class="card-title text-center text-warning mb-2">
+                    Are you sure you want to delete the project: **@Model!.Title**?
+                </h3>
+                <p class="text-center text-muted mb-4">This action is permanent and cannot be undone.</p>
+
+                <h5 class="text-secondary mb-3">Project Details for Confirmation</h5>
+                <hr class="text-muted" /> <!-- Changed divider color to match image style -->
+
+                <dl class="row">
+                    <!-- Title -->
+                    <dt class="col-sm-4 text-info">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model!.Title)
+                    </dd>
+
+                    <!-- Location -->
+                    <dt class="col-sm-4 text-info">
+                        @Html.DisplayNameFor(model => model.Location)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model!.Location)
+                    </dd>
+
+                    <!-- Status -->
+                    <dt class="col-sm-4 text-info">
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model!.Status)
+                    </dd>
+
+                    <!-- Start Date -->
+                    <dt class="col-sm-4 text-info">
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Model!.StartDate.ToString("d")
+                    </dd>
+
+                    <!-- End Date -->
+                    <dt class="col-sm-4 text-info">
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @(Model!.EndDate.HasValue ? Model.EndDate.Value.ToString("d") : "Ongoing")
+                    </dd>
+
+
+                    <!-- Coordinator -->
+                    <dt class="col-sm-4 text-info">
+                        @Html.DisplayNameFor(model => model.Coordinator)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @if (Model!.Coordinator != null)
+                        {
+                            @Model.Coordinator.Email
+                        }
+                        else
+                        {
+                            <span class="text-danger">No Coordinator Assigned</span>
+                        }
+                    </dd>
+                </dl>
+
+                <!-- Description -->
+                <div class="mt-4 pt-3 border-top">
+                    <h5 class="text-secondary mb-2">@Html.DisplayNameFor(model => model.Description)</h5>
+                    <p class="text-muted small">@Html.DisplayFor(model => model!.Description)</p>
+                </div>
+
+
+                <!-- Form & Action Buttons -->
+                <form asp-action="Delete" class="mt-4 text-center">
+                    <input type="hidden" asp-for="ProjectID" />
+                    <button type="submit" class="btn btn-danger btn-lg shadow">
+                        <i class="bi bi-trash-fill me-2"></i> Confirm Deletion
+                    </button>
+                    <!-- Back to List button now uses a more neutral gray color like in the image -->
+                    <a asp-action="Index" class="btn btn-secondary btn-lg ms-3">Back to List</a>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+

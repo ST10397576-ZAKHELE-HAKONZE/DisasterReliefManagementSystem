@@ -29,13 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Status" class="control-label"></label>
-                <!-- IMPLEMENTED: Changed from <input> to <select> for controlled options -->
-                <select asp-for="Status" class="form-control">
-                    <option value="Planning">Planning</option>
-                    <option value="Active">Active</option>
-                    <option value="On Hold">On Hold</option>
-                    <option value="Completed">Completed</option>
-                </select>
+                    @Html.DropDownListFor(model => model.Status, Html.GetEnumSelectList<GiftOfTheGivers.Web.Models.ProjectStatus>(), new { @class = "form-control" })
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <!-- ADDED: StartDate Field -->

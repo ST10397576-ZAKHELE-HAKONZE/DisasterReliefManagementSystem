@@ -9,7 +9,8 @@ namespace GiftOfTheGivers.Web.Models
         public int DonationID { get; set; }
 
         [Required]
-        public required string Type { get; set; } // e.g., "Cash", "Goods"
+        [Display(Name = "Donation Type")]
+        public DonationType Type { get; set; } // e.g., "Cash", "Goods"
 
         [Required]
         [Column(TypeName = "decimal(18, 2)")] // Ensure precise money format in SQL
@@ -21,7 +22,8 @@ namespace GiftOfTheGivers.Web.Models
         public DateTime DateReceived { get; set; } = DateTime.UtcNow;
 
         [Required]
-        public required string Status { get; set; } // e.g., "Received", "In Transit", "Allocated"
+        [Display(Name = "Status")]
+        public DonationStatus Status { get; set; } // e.g., "Received", "In Transit", "Allocated"
 
         // Foreign Key to Donor
         public int DonorID { get; set; }

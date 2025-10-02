@@ -1,25 +1,33 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using GiftOfTheGivers.Web.Models; // Already present, good!
+using GiftOfTheGivers.Web.Models; // Assuming ApplicationUser and ReliefProject are here
 
-public class VolunteerAssignment
+namespace GiftOfTheGivers.Web.Models
 {
-    [Key]
-    public int AssignmentID { get; set; } // Primary Key
+    public class VolunteerAssignment
+    {
+        [Key]
+        public int AssignmentID { get; set; } // Primary Key
 
-    // Add 'required' to the non-nullable string properties
-    public required string Role { get; set; }
+        [Display(Name = "Role/Task")]
+        public required VolunteerRole Role { get; set; }
 
-    // DateTime is non-nullable, but it is initialized with a default value, so 'required' is NOT needed
-    public System.DateTime AssignedDate { get; set; } = System.DateTime.UtcNow;
+        [Display(Name = "Assigned Date")]
+        public System.DateTime AssignedDate { get; set; } = System.DateTime.UtcNow;
 
-    public required string Status { get; set; }
+        public required AssignmentStatus Status { get; set; }
 
-    // Foreign Keys
-    public required string UserId { get; set; }
+        // Foreign Keys
+        // Note: Using 'required' keyword for non-nullable references is good for C# 8+/EF Core 6+
 
-    // Navigation properties must be 'required' if they are non-nullable
-    public required virtual ApplicationUser User { get; set; }
+        [Display(Name = "Volunteer User")]
+        public required string UserId { get; set; }
 
-    public int ProjectID { get; set; }
-    public required virtual ReliefProject Project { get; set; }
+        [Display(Name = "Relief Project")]
+        public int ProjectID { get; set; }
+
+        // Navigation properties
+        public required virtual ApplicationUser User { get; set; }
+
+        public required virtual ReliefProject Project { get; set; }
+    }
 }

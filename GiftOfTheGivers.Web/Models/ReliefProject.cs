@@ -18,7 +18,7 @@ public class ReliefProject
     public required string Description { get; set; }
 
     [Required]
-    public required string Status { get; set; }
+    public ProjectStatus Status { get; set; }
 
     // THE CORRECT, UNCOMMENTED DATE FIELDS
     [Required]

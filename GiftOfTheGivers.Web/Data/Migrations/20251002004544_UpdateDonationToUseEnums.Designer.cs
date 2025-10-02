@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GiftOfTheGivers.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251002004544_UpdateDonationToUseEnums")]
+    partial class UpdateDonationToUseEnums
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,39 +185,6 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.HasKey("DonorID");
 
                     b.ToTable("Donors");
-                });
-
-            modelBuilder.Entity("GiftOfTheGivers.Web.Models.VolunteerAssignment", b =>
-                {
-                    b.Property<int>("AssignmentID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssignmentID"));
-
-                    b.Property<DateTime>("AssignedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ProjectID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("AssignmentID");
-
-                    b.HasIndex("ProjectID");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("VolunteerAssignments");
                 });
 
             modelBuilder.Entity("IncidentReport", b =>
@@ -436,6 +406,41 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.ToTable("ReliefProjects");
                 });
 
+            modelBuilder.Entity("VolunteerAssignment", b =>
+                {
+                    b.Property<int>("AssignmentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssignmentID"));
+
+                    b.Property<DateTime>("AssignedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProjectID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("AssignmentID");
+
+                    b.HasIndex("ProjectID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("VolunteerAssignments");
+                });
+
             modelBuilder.Entity("GiftOfTheGivers.Web.Models.Donation", b =>
                 {
                     b.HasOne("GiftOfTheGivers.Web.Models.Donor", "Donor")
@@ -459,25 +464,6 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                     b.Navigation("RecordedByUser");
 
                     b.Navigation("ReliefProject");
-                });
-
-            modelBuilder.Entity("GiftOfTheGivers.Web.Models.VolunteerAssignment", b =>
-                {
-                    b.HasOne("ReliefProject", "Project")
-                        .WithMany("Assignments")
-                        .HasForeignKey("ProjectID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Project");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("IncidentReport", b =>
@@ -551,6 +537,25 @@ namespace GiftOfTheGivers.Web.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Coordinator");
+                });
+
+            modelBuilder.Entity("VolunteerAssignment", b =>
+                {
+                    b.HasOne("ReliefProject", "Project")
+                        .WithMany("Assignments")
+                        .HasForeignKey("ProjectID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("GiftOfTheGivers.Web.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("GiftOfTheGivers.Web.Models.Donor", b =>

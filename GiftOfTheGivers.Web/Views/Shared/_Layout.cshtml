@@ -20,27 +20,53 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <!-- Standard Home and Privacy links -->
+                        <!-- Standard Home link -->
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
 
-                        <!-- New Navigation Links Added -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Donors" asp-action="Index">Donors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ReliefProjects" asp-action="Index">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="VolunteerAssignments" asp-action="Index">Assignments</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Donations" asp-action="Index">Donations</a>
-                        </li>
+                        <!-- Donors: Visible to Admins and Volunteers (Staff roles) -->
+                        @if (User.IsInRole("Administrator") || User.IsInRole("Volunteer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Donors" asp-action="Index">Donors</a>
+                            </li>
+                        }
 
-                        <!-- ADMIN LINK: Now includes an explicit null check for User.Identity -->
-                        @if (User.Identity != null && User.Identity.IsAuthenticated)
+                        <!-- Projects: Visible to all authenticated users. Use null-safe check for IsAuthenticated. -->
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ReliefProjects" asp-action="Index">Projects</a>
+                            </li>
+                        }
+
+                        <!-- Assignments: Only Visible to Volunteers and Administrators -->
+                        @if (User.IsInRole("Administrator") || User.IsInRole("Volunteer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="VolunteerAssignments" asp-action="Index">Assignments</a>
+                            </li>
+                        }
+
+                        <!-- Donations: Visible to all authenticated users. Use null-safe check for IsAuthenticated. -->
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Donations" asp-action="Index">Donations</a>
+                            </li>
+                        }
+
+                        <!-- IncidentReports: Visible to all authenticated users. Use null-safe check for IsAuthenticated. -->
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="IncidentReports" asp-action="Index">Incident Reports</a>
+                            </li>
+                        }
+
+                        <!-- ADMIN DASHBOARD: Only Visible to Administrators -->
+                        @if (User.IsInRole("Administrator"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-danger fw-bold" asp-area="" asp-controller="Admin" asp-action="Index">Admin Dashboard</a>

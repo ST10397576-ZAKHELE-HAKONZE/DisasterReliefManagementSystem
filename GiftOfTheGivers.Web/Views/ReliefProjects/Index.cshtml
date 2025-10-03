@@ -6,9 +6,20 @@
 
 <h1 class="text-center text-primary mb-4">Relief Projects</h1>
 
-<p class="text-center mb-4">
-    <a asp-action="Create" class="btn btn-primary btn-lg shadow">Create New Project</a>
-</p>
+<!-- UI access control: Only show the Create button if the user is an Administrator -->
+@if (User.IsInRole("Administrator"))
+{
+    <p class="text-center mb-4">
+        <a asp-action="Create" class="btn btn-primary btn-lg shadow">Create New Project</a>
+    </p>
+}
+else
+{
+    <!-- Optional: Display a message for non-admins -->
+    <p class="text-center text-muted mb-4">
+        Only Administrators can create new relief projects.
+    </p>
+}
 
 <div class="card shadow-lg p-4">
     <div class="table-responsive">
@@ -51,9 +62,13 @@
                             }
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.ProjectID" class="btn btn-sm btn-outline-info me-2">Edit</a>
                             <a asp-action="Details" asp-route-id="@item.ProjectID" class="btn btn-sm btn-outline-secondary me-2">Details</a>
-                            <a asp-action="Delete" asp-route-id="@item.ProjectID" class="btn btn-sm btn-outline-danger">Delete</a>
+                            
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.ProjectID" class="btn btn-sm btn-outline-info me-2">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.ProjectID" class="btn btn-sm btn-outline-danger">Delete</a>
+                            }
                         </td>
                     </tr>
                 }

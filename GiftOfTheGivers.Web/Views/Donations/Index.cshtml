@@ -6,9 +6,20 @@
 
 <h1 class="text-center text-success mb-4">Donation Records</h1>
 
-<p class="text-center mb-4">
-    <a asp-action="Create" class="btn btn-success btn-lg shadow">Record New Donation</a>
-</p>
+<!-- UI access control: Only show the Create button if the user is an Administrator -->
+@if (User.IsInRole("Administrator"))
+{
+    <p class="text-center mb-4">
+        <a asp-action="Create" class="btn btn-success btn-lg shadow">Record New Donation</a>
+    </p>
+}
+else
+{
+    <!-- Optional: Display a message for non-admins -->
+    <p class="text-center text-muted mb-4">
+        Only Administrators can record new donations.
+    </p>
+}
 
 <div class="card shadow-lg p-4">
     <div class="table-responsive">
@@ -69,9 +80,13 @@
                             @Html.DisplayFor(modelItem => item.RecordedByUser!.Email)
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.DonationID" class="btn btn-sm btn-outline-success">Edit</a>
                             <a asp-action="Details" asp-route-id="@item.DonationID" class="btn btn-sm btn-outline-secondary">Details</a>
-                            <a asp-action="Delete" asp-route-id="@item.DonationID" class="btn btn-sm btn-outline-danger">Delete</a>
+                            <!-- UI access control for Edit/Delete: Only visible to Administrators -->
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.DonationID" class="btn btn-sm btn-outline-success">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.DonationID" class="btn btn-sm btn-outline-danger">Delete</a>
+                            }
                         </td>
                     </tr>
                 }

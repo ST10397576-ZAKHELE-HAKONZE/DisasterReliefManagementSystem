@@ -1,25 +1,38 @@
-﻿using System.ComponentModel.DataAnnotations;
-using GiftOfTheGivers.Web.Models;
+﻿using GiftOfTheGivers.Web.Models;
+using GiftOfTheGivers.Web.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
-public class IncidentReport
+namespace GiftOfTheGivers.Web.Models
 {
-    [Key]
-    public int ReportID { get; set; } // Primary Key
+    // Represents a report submitted by a user detailing a disaster or emergency incident.
+    public class IncidentReport
+    {
+        [Key]
+        public int ReportID { get; set; } // Primary Key
 
-    // Add 'required' to the non-nullable string properties
-    public required string Title { get; set; }
-    public required string Location { get; set; }
-    public required string Description { get; set; }
-    public required string Severity { get; set; }
+        [Required]
+        public required string Title { get; set; }
 
-    // DateTime is non-nullable but is initialized with a default value, so 'required' is NOT needed
-    public System.DateTime Timestamp { get; set; } = System.DateTime.UtcNow;
+        [Required]
+        public required string Location { get; set; }
 
-    public required string Status { get; set; }
+        [Required]
+        public required string Description { get; set; }
 
-    // Foreign Key (string FKs are non-nullable by default)
-    public required string ReportedByUserId { get; set; }
+        [Required]
+        public required IncidentSeverity Severity { get; set; }
 
-    // Navigation property must be 'required' if non-nullable
-    public required virtual ApplicationUser ReportedByUser { get; set; }
+        // DateTime is non-nullable but is initialized with a default value, so 'required' is NOT needed
+        public System.DateTime Timestamp { get; set; } = System.DateTime.UtcNow;
+
+        [Required]
+        public required IncidentStatus Status { get; set; }
+
+        // Foreign Key
+        [Required]
+        public required string ReportedByUserId { get; set; }
+
+        // Navigation property
+        public required virtual ApplicationUser ReportedByUser { get; set; } = default!;
+    }
 }

@@ -1,0 +1,37 @@
+﻿@model GiftOfTheGivers.Web.Models.IncidentReport
+
+@{
+    ViewData["Title"] = "Incident Report Details";
+}
+
+<h1 class="text-center text-primary mb-4">Incident Report Details</h1>
+
+<div class="card shadow-lg p-4 mx-auto" style="max-width: 700px;">
+    <dl class="row">
+        <dt class="col-sm-4">Title</dt>
+        <dd class="col-sm-8">@Model.Title</dd>
+
+        <dt class="col-sm-4">Location</dt>
+        <dd class="col-sm-8">@Model.Location</dd>
+
+        <dt class="col-sm-4">Description</dt>
+        <dd class="col-sm-8">@Model.Description</dd>
+
+        <dt class="col-sm-4">Severity</dt>
+        <dd class="col-sm-8">@Model.Severity</dd>
+
+        <dt class="col-sm-4">Status</dt>
+        <dd class="col-sm-8">@Model.Status</dd>
+
+        <dt class="col-sm-4">Reported By</dt>
+        <dd class="col-sm-8">@(Model.ReportedByUser?.Email ?? "Unknown User (Deleted)")</dd>
+
+        <dt class="col-sm-4">Reported At</dt>
+        <dd class="col-sm-8">@Model.Timestamp.ToString("g")</dd>
+    </dl>
+
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model.ReportID" class="btn btn-info btn-lg me-2">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary btn-lg">Back to List</a>
+    </div>
+</div>

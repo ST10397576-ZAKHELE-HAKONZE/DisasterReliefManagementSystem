@@ -8,7 +8,7 @@ trigger:
 
 pool:
   # vmImage: 'windows-latest'
-  name:ZH-Agents
+  name: 'ZH-Agents'
 
 variables:
   solution: './*.sln'

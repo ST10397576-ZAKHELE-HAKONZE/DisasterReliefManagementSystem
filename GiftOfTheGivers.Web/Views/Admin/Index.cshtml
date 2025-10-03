@@ -1,0 +1,84 @@
+﻿@model IEnumerable<GiftOfTheGivers.Web.Models.IncidentReport>
+@using GiftOfTheGivers.Web.Models.Enums
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container py-5">
+    <h1 class="display-4 text-center text-primary mb-4">Incident Report Management</h1>
+    <p class="lead text-center text-muted mb-5">
+        Review, triage, and manage all reported incidents across the organization.
+    </p>
+
+    <div class="card shadow-lg">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0">
+                    <thead class="bg-light sticky-top">
+                        <tr>
+                            <th scope="col">@Html.DisplayNameFor(model => model.ReportID)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Title)</th>
+                            <th scope="col">Reported By</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.Timestamp)</th>
+                            <th scope="col" class="text-center">@Html.DisplayNameFor(model => model.Severity)</th>
+                            <th scope="col" class="text-center">@Html.DisplayNameFor(model => model.Status)</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                                // Determine badge color for Severity
+                                // FIXED: 'Medium' changed to 'Moderate' to match IncidentSeverity enum
+                                string severityClass = item.Severity switch
+                                {
+                                        IncidentSeverity.High => "danger",
+                                        IncidentSeverity.Moderate => "warning", 
+                                        _ => "success" // Catches Minor/Low
+                                };
+
+                                // Determine badge color for Status
+                                // FIXED: 'New' changed to 'Reported', 'InProgress' changed to 'Investigating'
+                                string statusClass = item.Status switch
+                                {
+                                        IncidentStatus.Reported => "primary",    
+                                        IncidentStatus.Investigating => "info", 
+                                        _ => "success" // Catches Resolved/ActiveRelief
+                                };
+
+                                <tr>
+                                    <th scope="row">#@Html.DisplayFor(modelItem => item.ReportID)</th>
+                                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                                    <td>
+                                        <!-- Display the user's email if available, otherwise 'System' -->
+                                        @(item.ReportedByUser?.Email ?? "System")
+                                    </td>
+                                    <td>@item.Timestamp.ToString("g")</td>
+                                    <td class="text-center">
+                                        <span class="badge bg-@severityClass">@Html.DisplayFor(modelItem => item.Severity)</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge bg-@statusClass">@Html.DisplayFor(modelItem => item.Status)</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <a asp-action="Edit" asp-route-id="@item.ReportID" class="btn btn-sm btn-outline-info me-2" title="Edit Report">
+                                            <i class="bi bi-pencil-fill"></i> Edit
+                                        </a>
+                                        <!-- Future: Add Delete button here -->
+                                    </td>
+                                </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @if (!Model.Any())
+            {
+                    <div class="alert alert-info text-center m-4" role="alert">
+                        <i class="bi bi-info-circle me-2"></i> No incidents have been reported yet. The system is clean!
+                    </div>
+            }
+        </div>
+    </div>
+
+</div>

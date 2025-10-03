@@ -1,0 +1,76 @@
+﻿@model ReliefProject
+
+@{
+    ViewData["Title"] = "Project Details";
+}
+
+@using GiftOfTheGivers.Web.Models
+
+<h1 class="text-center text-primary mb-5">Relief Project Details</h1>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-lg p-4 mb-4">
+            <h2 class="card-title text-dark border-bottom pb-2 mb-3">@Model.Title</h2>
+
+            <div class="row g-4">
+
+                <!-- Section 1: Core Project Information -->
+                <div class="col-md-6">
+                    <h5 class="text-secondary mb-3">Project Information</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Location)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Location)</dd>
+
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Status)</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge @(Model.Status == ProjectStatus.Active ? "bg-success" : Model.Status == ProjectStatus.Completed ? "bg-primary" : "bg-warning text-dark")">
+                                @Html.DisplayFor(model => model.Status)
+                            </span>
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- Section 2: Dates and Coordinator -->
+                <div class="col-md-6">
+                    <h5 class="text-secondary mb-3">Timeline & Coordination</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.StartDate)</dt>
+                        <dd class="col-sm-8">@Model.StartDate.ToString("d")</dd>
+
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.EndDate)</dt>
+                        <dd class="col-sm-8">@(Model.EndDate.HasValue? Model.EndDate.Value.ToString("d") : "Ongoing")</dd>
+
+                        <dt class="col-sm-4 text-muted">@Html.DisplayNameFor(model => model.Coordinator)</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.Coordinator != null)
+                            {
+                                @Model.Coordinator.Email
+                            }
+                            else
+                            {
+                                <span class="text-danger">No Coordinator Assigned</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- Section 3: Description (Full Width) -->
+            <div class="mt-4 pt-3 border-top">
+                <h5 class="text-secondary mb-3">@Html.DisplayNameFor(model => model.Description)</h5>
+                <p class="card-text">@Html.DisplayFor(model => model.Description)</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="mt-4 pt-3 border-top d-flex justify-content-between">
+                <a asp-action="Edit" asp-route-id="@Model?.ProjectID" class="btn btn-info shadow-sm">
+                    <i class="bi bi-pencil-square me-2"></i>Edit
+                </a>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

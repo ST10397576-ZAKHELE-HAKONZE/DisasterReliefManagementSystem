@@ -1,0 +1,40 @@
+﻿@model GiftOfTheGivers.Web.Models.IncidentReport
+
+@{
+    ViewData["Title"] = "Delete Incident Report";
+}
+
+<h1 class="text-center text-danger mb-4">Delete Incident Report</h1>
+
+<div class="card shadow-lg p-4 mx-auto" style="max-width: 700px;">
+    <h4 class="text-center mb-3">Are you sure you want to delete this report?</h4>
+
+    <dl class="row">
+        <dt class="col-sm-4">Title</dt>
+        <dd class="col-sm-8">@Model.Title</dd>
+
+        <dt class="col-sm-4">Location</dt>
+        <dd class="col-sm-8">@Model.Location</dd>
+
+        <dt class="col-sm-4">Description</dt>
+        <dd class="col-sm-8">@Model.Description</dd>
+
+        <dt class="col-sm-4">Severity</dt>
+        <dd class="col-sm-8">@Model.Severity</dd>
+
+        <dt class="col-sm-4">Status</dt>
+        <dd class="col-sm-8">@Model.Status</dd>
+
+        <dt class="col-sm-4">Reported By</dt>
+        <dd class="col-sm-8">@(Model.ReportedByUser?.Email ?? "Unknown User (Deleted)")</dd>
+
+        <dt class="col-sm-4">Reported At</dt>
+        <dd class="col-sm-8">@Model.Timestamp.ToString("g")</dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" method="post" class="text-center">
+        <input type="hidden" asp-for="ReportID" />
+        <button type="submit" class="btn btn-danger btn-lg shadow me-2">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary btn-lg">Cancel</a>
+    </form>
+</div>

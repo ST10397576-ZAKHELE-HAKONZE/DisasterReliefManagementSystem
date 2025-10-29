@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GiftOfTheGivers.Web.Models
+namespace GiftOfTheGivers.Web.Models.Enums
 {
     public enum ProjectStatus
     {

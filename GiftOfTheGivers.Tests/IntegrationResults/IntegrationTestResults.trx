@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="9acc708b-cc67-4257-b4a7-952381968212" name="Zach@DESKTOP-TR9TESF 2025-10-31 01:42:26" runUser="DESKTOP-TR9TESF\Zach" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-10-31T01:42:26.4796709+02:00" queuing="2025-10-31T01:42:26.4796713+02:00" start="2025-10-31T01:42:02.7279779+02:00" finish="2025-10-31T01:42:27.8453104+02:00" />
+  <TestSettings name="default" id="4319fc72-e8ad-4b12-af04-3c3abd42be15">
+    <Deployment runDeploymentRoot="Zach_DESKTOP-TR9TESF_2025-10-31_01_42_26" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="177636b6-ed02-4bde-97a8-5f5ce3a0a170" testId="9807bfe0-a96e-0730-6b36-418f2649f73d" testName="GiftOfTheGivers.Tests.Integration.DonationWorkflowIntegrationTests.DatabaseIntegrationTest_RestrictDelete_ManualCleanup" computerName="DESKTOP-TR9TESF" duration="00:00:00.0121737" startTime="2025-10-31T01:42:26.4971551+02:00" endTime="2025-10-31T01:42:26.4971552+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="177636b6-ed02-4bde-97a8-5f5ce3a0a170" />
+    <UnitTestResult executionId="b8e924bc-cc92-4d0b-97cd-098d9db93687" testId="82046374-2cf9-f31c-a7b4-40daf5c605a5" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Get_ReturnsViewModelWithCorrectData" computerName="DESKTOP-TR9TESF" duration="00:00:00.1244630" startTime="2025-10-31T01:42:26.4527857+02:00" endTime="2025-10-31T01:42:26.4527858+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b8e924bc-cc92-4d0b-97cd-098d9db93687" />
+    <UnitTestResult executionId="1b14fe1e-2fe4-41fa-913b-e2257e976d32" testId="cf3880fa-6b1c-8b3e-5e92-4d48d00e5849" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_WithMismatchedId_ReturnsNotFound" computerName="DESKTOP-TR9TESF" duration="00:00:00.0013728" startTime="2025-10-31T01:42:26.4533390+02:00" endTime="2025-10-31T01:42:26.4533391+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1b14fe1e-2fe4-41fa-913b-e2257e976d32" />
+    <UnitTestResult executionId="c4490d60-fc42-48a1-8bdb-f18bf44c0ef9" testId="7d385040-bebe-9203-8dd1-03fa01cbeed3" testName="GiftOfTheGivers.Tests.Integration.VolunteerWorkflowIntegrationTests.CompleteVolunteerFlow_AssignToProject_Success" computerName="DESKTOP-TR9TESF" duration="00:00:00.0383814" startTime="2025-10-31T01:42:26.4790216+02:00" endTime="2025-10-31T01:42:26.4790217+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4490d60-fc42-48a1-8bdb-f18bf44c0ef9" />
+    <UnitTestResult executionId="7f17a50c-9cdd-47ba-93e7-b7e13a0a54d9" testId="b96e6c19-9d42-7473-5dbe-8acea64edfb0" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Delete_Get_ReturnsViewWithReport" computerName="DESKTOP-TR9TESF" duration="00:00:00.0009957" startTime="2025-10-31T01:42:26.5752594+02:00" endTime="2025-10-31T01:42:26.5752595+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f17a50c-9cdd-47ba-93e7-b7e13a0a54d9" />
+    <UnitTestResult executionId="0f46b458-ce79-4a4c-aea4-944661ea15cb" testId="2aad0f80-115e-c93d-e747-0ea83d99d5a9" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Index_ReturnsViewWithAllReports" computerName="DESKTOP-TR9TESF" duration="00:00:00.0011325" startTime="2025-10-31T01:42:26.5742160+02:00" endTime="2025-10-31T01:42:26.5742162+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f46b458-ce79-4a4c-aea4-944661ea15cb" />
+    <UnitTestResult executionId="90c81b7d-d052-4147-a994-9a98a79cbf24" testId="217842f8-8fca-3656-96dd-b2a12702e1ba" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_UpdatesReportSuccessfully" computerName="DESKTOP-TR9TESF" duration="00:00:00.1971246" startTime="2025-10-31T01:42:26.3142511+02:00" endTime="2025-10-31T01:42:26.3142512+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90c81b7d-d052-4147-a994-9a98a79cbf24" />
+    <UnitTestResult executionId="0d0b7ec5-b424-4f5a-bba2-b4544f8579c4" testId="c0568776-f777-6926-ab1b-5d412abb87d8" testName="GiftOfTheGivers.Tests.Integration.ReliefProjectWorkflowIntegrationTests.CompleteWorkflow_CreateIncidentAndProject_Success" computerName="DESKTOP-TR9TESF" duration="00:00:00.8339961" startTime="2025-10-31T01:42:26.4280824+02:00" endTime="2025-10-31T01:42:26.4280827+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d0b7ec5-b424-4f5a-bba2-b4544f8579c4" />
+    <UnitTestResult executionId="409dc768-19b2-4faa-a860-3ce1ac510807" testId="c6cb1809-5991-975d-c039-48d155f227b5" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Get_WithInvalidId_ReturnsNotFound" computerName="DESKTOP-TR9TESF" duration="00:00:00.0007433" startTime="2025-10-31T01:42:26.5730170+02:00" endTime="2025-10-31T01:42:26.5730171+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="409dc768-19b2-4faa-a860-3ce1ac510807" />
+    <UnitTestResult executionId="92c46e62-47b9-4290-9dd0-630aaf08b70d" testId="c0e08fe6-4f9c-9982-24b9-42bc1afc2a99" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Delete_Get_WithNullId_ReturnsNotFound" computerName="DESKTOP-TR9TESF" duration="00:00:00.0429473" startTime="2025-10-31T01:42:26.1170774+02:00" endTime="2025-10-31T01:42:26.1170777+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="92c46e62-47b9-4290-9dd0-630aaf08b70d" />
+    <UnitTestResult executionId="1f9bb68b-7cfd-4957-8106-299d529fec53" testId="66ce96b2-fc22-77d7-8711-95fd6c8a1333" testName="GiftOfTheGivers.Tests.Integration.ReliefProjectWorkflowIntegrationTests.ProjectStatusFlow_NewToCompleted_TracksCorrectly" computerName="DESKTOP-TR9TESF" duration="00:00:00.0063203" startTime="2025-10-31T01:42:26.4523895+02:00" endTime="2025-10-31T01:42:26.4523896+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1f9bb68b-7cfd-4957-8106-299d529fec53" />
+    <UnitTestResult executionId="8598b8ef-db0a-455d-8e82-4cb042a9cf1e" testId="4b17e3f4-e728-7b64-2180-066b0fe7a665" testName="GiftOfTheGivers.Tests.Integration.DonationWorkflowIntegrationTests.CompleteFlowTest_CreateDonorAndDonation_Success" computerName="DESKTOP-TR9TESF" duration="00:00:00.8909351" startTime="2025-10-31T01:42:26.4848540+02:00" endTime="2025-10-31T01:42:26.4848541+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8598b8ef-db0a-455d-8e82-4cb042a9cf1e" />
+    <UnitTestResult executionId="dee0840b-168e-4c00-a0dc-5ed9d82ce95b" testId="1c2315c7-ee2e-cafb-f00d-9d91c9dd595a" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Index_DisplaysSuccessMessage_FromTempData" computerName="DESKTOP-TR9TESF" duration="00:00:00.0730616" startTime="2025-10-31T01:42:26.5532187+02:00" endTime="2025-10-31T01:42:26.5532188+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dee0840b-168e-4c00-a0dc-5ed9d82ce95b" />
+    <UnitTestResult executionId="6430b874-aa08-4759-943d-cce3d44f0805" testId="170bb795-af37-a6f8-1025-3cb61c844675" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_WithInvalidModel_ReturnsViewWithErrors" computerName="DESKTOP-TR9TESF" duration="00:00:00.0157000" startTime="2025-10-31T01:42:26.5706468+02:00" endTime="2025-10-31T01:42:26.5706469+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6430b874-aa08-4759-943d-cce3d44f0805" />
+    <UnitTestResult executionId="812536f3-9384-4be8-8696-4464c238b4be" testId="48e86a5c-dfe5-1de3-804e-cd7ed1907311" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.DeleteConfirmed_RemovesReportFromDatabase" computerName="DESKTOP-TR9TESF" duration="00:00:00.0168939" startTime="2025-10-31T01:42:26.4800455+02:00" endTime="2025-10-31T01:42:26.4800456+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="812536f3-9384-4be8-8696-4464c238b4be" />
+    <UnitTestResult executionId="b3481082-a485-471a-bba1-215e82cf773f" testId="24e9e519-9c62-3a2a-89f3-2d6cff772e1d" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_HandlesConcurrencyException" computerName="DESKTOP-TR9TESF" duration="00:00:00.0015264" startTime="2025-10-31T01:42:26.5722266+02:00" endTime="2025-10-31T01:42:26.5722267+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3481082-a485-471a-bba1-215e82cf773f" />
+    <UnitTestResult executionId="05e0555f-8739-42b5-8403-e79062035605" testId="451ff8d1-86f3-ef60-4c67-c853d3361091" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.DeleteConfirmed_HandlesNonExistentRecord" computerName="DESKTOP-TR9TESF" duration="00:00:00.0016240" startTime="2025-10-31T01:42:26.5548853+02:00" endTime="2025-10-31T01:42:26.5548854+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="05e0555f-8739-42b5-8403-e79062035605" />
+    <UnitTestResult executionId="b397c6b7-be04-4f0f-868c-3678f1de21b3" testId="2de42927-c362-53ac-7f4b-fa45d0e24af0" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Get_WithNullId_ReturnsNotFound" computerName="DESKTOP-TR9TESF" duration="00:00:00.4805394" startTime="2025-10-31T01:42:26.0746919+02:00" endTime="2025-10-31T01:42:26.0747095+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b397c6b7-be04-4f0f-868c-3678f1de21b3" />
+    <UnitTestResult executionId="51bcfab7-72e6-49e9-ae0f-b9530e86d764" testId="71b81277-1585-b18f-3a54-c23d366b5b6d" testName="GiftOfTheGivers.Tests.Integration.DatabaseIntegrityIntegrationTests.ConcurrentOperations_HandlesCorrectly" computerName="DESKTOP-TR9TESF" duration="00:00:00.0410218" startTime="2025-10-31T01:42:26.4654711+02:00" endTime="2025-10-31T01:42:26.4654714+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="51bcfab7-72e6-49e9-ae0f-b9530e86d764" />
+    <UnitTestResult executionId="12f72be8-c227-43e2-80fb-a2a240380932" testId="af4b350e-4de6-fc34-ca8b-85df357630ad" testName="GiftOfTheGivers.Tests.Integration.DatabaseIntegrityIntegrationTests.DatabaseIntegrity_MultipleOperations_MaintainsConsistency" computerName="DESKTOP-TR9TESF" duration="00:00:00.8302519" startTime="2025-10-31T01:42:26.4243229+02:00" endTime="2025-10-31T01:42:26.4243230+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="12f72be8-c227-43e2-80fb-a2a240380932" />
+    <UnitTestResult executionId="5ce0d982-53bd-4964-b276-b8623fed8b44" testId="123e1200-3858-8d73-42f4-8bade3a41ddf" testName="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_PreservesReadOnlyFields" computerName="DESKTOP-TR9TESF" duration="00:00:00.0227838" startTime="2025-10-31T01:42:26.4630500+02:00" endTime="2025-10-31T01:42:26.4630501+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5ce0d982-53bd-4964-b276-b8623fed8b44" />
+    <UnitTestResult executionId="9134417e-cdbd-4534-b2eb-3c17738bdbb2" testId="f0e16282-a7d1-9599-3f66-753a9655c5ce" testName="GiftOfTheGivers.Tests.Integration.VolunteerWorkflowIntegrationTests.MultipleVolunteersOnProject_TracksIndependently" computerName="DESKTOP-TR9TESF" duration="00:00:00.8465791" startTime="2025-10-31T01:42:26.4538282+02:00" endTime="2025-10-31T01:42:26.4538283+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9134417e-cdbd-4534-b2eb-3c17738bdbb2" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Delete_Get_WithNullId_ReturnsNotFound" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="c0e08fe6-4f9c-9982-24b9-42bc1afc2a99">
+      <Execution id="92c46e62-47b9-4290-9dd0-630aaf08b70d" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Delete_Get_WithNullId_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.DeleteConfirmed_HandlesNonExistentRecord" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="451ff8d1-86f3-ef60-4c67-c853d3361091">
+      <Execution id="05e0555f-8739-42b5-8403-e79062035605" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="DeleteConfirmed_HandlesNonExistentRecord" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Get_WithInvalidId_ReturnsNotFound" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="c6cb1809-5991-975d-c039-48d155f227b5">
+      <Execution id="409dc768-19b2-4faa-a860-3ce1ac510807" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Get_WithInvalidId_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Get_WithNullId_ReturnsNotFound" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="2de42927-c362-53ac-7f4b-fa45d0e24af0">
+      <Execution id="b397c6b7-be04-4f0f-868c-3678f1de21b3" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Get_WithNullId_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Delete_Get_ReturnsViewWithReport" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="b96e6c19-9d42-7473-5dbe-8acea64edfb0">
+      <Execution id="7f17a50c-9cdd-47ba-93e7-b7e13a0a54d9" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Delete_Get_ReturnsViewWithReport" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_PreservesReadOnlyFields" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="123e1200-3858-8d73-42f4-8bade3a41ddf">
+      <Execution id="5ce0d982-53bd-4964-b276-b8623fed8b44" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Post_PreservesReadOnlyFields" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.DonationWorkflowIntegrationTests.DatabaseIntegrationTest_RestrictDelete_ManualCleanup" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="9807bfe0-a96e-0730-6b36-418f2649f73d">
+      <Execution id="177636b6-ed02-4bde-97a8-5f5ce3a0a170" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.DonationWorkflowIntegrationTests" name="DatabaseIntegrationTest_RestrictDelete_ManualCleanup" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.DeleteConfirmed_RemovesReportFromDatabase" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="48e86a5c-dfe5-1de3-804e-cd7ed1907311">
+      <Execution id="812536f3-9384-4be8-8696-4464c238b4be" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="DeleteConfirmed_RemovesReportFromDatabase" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_WithMismatchedId_ReturnsNotFound" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="cf3880fa-6b1c-8b3e-5e92-4d48d00e5849">
+      <Execution id="1b14fe1e-2fe4-41fa-913b-e2257e976d32" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Post_WithMismatchedId_ReturnsNotFound" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Get_ReturnsViewModelWithCorrectData" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="82046374-2cf9-f31c-a7b4-40daf5c605a5">
+      <Execution id="b8e924bc-cc92-4d0b-97cd-098d9db93687" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Get_ReturnsViewModelWithCorrectData" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_HandlesConcurrencyException" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="24e9e519-9c62-3a2a-89f3-2d6cff772e1d">
+      <Execution id="b3481082-a485-471a-bba1-215e82cf773f" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Post_HandlesConcurrencyException" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.DatabaseIntegrityIntegrationTests.ConcurrentOperations_HandlesCorrectly" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="71b81277-1585-b18f-3a54-c23d366b5b6d">
+      <Execution id="51bcfab7-72e6-49e9-ae0f-b9530e86d764" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.DatabaseIntegrityIntegrationTests" name="ConcurrentOperations_HandlesCorrectly" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.DonationWorkflowIntegrationTests.CompleteFlowTest_CreateDonorAndDonation_Success" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="4b17e3f4-e728-7b64-2180-066b0fe7a665">
+      <Execution id="8598b8ef-db0a-455d-8e82-4cb042a9cf1e" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.DonationWorkflowIntegrationTests" name="CompleteFlowTest_CreateDonorAndDonation_Success" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.VolunteerWorkflowIntegrationTests.MultipleVolunteersOnProject_TracksIndependently" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="f0e16282-a7d1-9599-3f66-753a9655c5ce">
+      <Execution id="9134417e-cdbd-4534-b2eb-3c17738bdbb2" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.VolunteerWorkflowIntegrationTests" name="MultipleVolunteersOnProject_TracksIndependently" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.ReliefProjectWorkflowIntegrationTests.ProjectStatusFlow_NewToCompleted_TracksCorrectly" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="66ce96b2-fc22-77d7-8711-95fd6c8a1333">
+      <Execution id="1f9bb68b-7cfd-4957-8106-299d529fec53" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.ReliefProjectWorkflowIntegrationTests" name="ProjectStatusFlow_NewToCompleted_TracksCorrectly" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_UpdatesReportSuccessfully" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="217842f8-8fca-3656-96dd-b2a12702e1ba">
+      <Execution id="90c81b7d-d052-4147-a994-9a98a79cbf24" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Post_UpdatesReportSuccessfully" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Index_DisplaysSuccessMessage_FromTempData" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="1c2315c7-ee2e-cafb-f00d-9d91c9dd595a">
+      <Execution id="dee0840b-168e-4c00-a0dc-5ed9d82ce95b" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Index_DisplaysSuccessMessage_FromTempData" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Edit_Post_WithInvalidModel_ReturnsViewWithErrors" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="170bb795-af37-a6f8-1025-3cb61c844675">
+      <Execution id="6430b874-aa08-4759-943d-cce3d44f0805" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Edit_Post_WithInvalidModel_ReturnsViewWithErrors" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests.Index_ReturnsViewWithAllReports" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="2aad0f80-115e-c93d-e747-0ea83d99d5a9">
+      <Execution id="0f46b458-ce79-4a4c-aea4-944661ea15cb" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Controllers.DonationWorkflowIntegrationTests" name="Index_ReturnsViewWithAllReports" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.VolunteerWorkflowIntegrationTests.CompleteVolunteerFlow_AssignToProject_Success" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="7d385040-bebe-9203-8dd1-03fa01cbeed3">
+      <Execution id="c4490d60-fc42-48a1-8bdb-f18bf44c0ef9" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.VolunteerWorkflowIntegrationTests" name="CompleteVolunteerFlow_AssignToProject_Success" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.DatabaseIntegrityIntegrationTests.DatabaseIntegrity_MultipleOperations_MaintainsConsistency" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="af4b350e-4de6-fc34-ca8b-85df357630ad">
+      <Execution id="12f72be8-c227-43e2-80fb-a2a240380932" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.DatabaseIntegrityIntegrationTests" name="DatabaseIntegrity_MultipleOperations_MaintainsConsistency" />
+    </UnitTest>
+    <UnitTest name="GiftOfTheGivers.Tests.Integration.ReliefProjectWorkflowIntegrationTests.CompleteWorkflow_CreateIncidentAndProject_Success" storage="d:\rosebank\disasterreliefmanagementsystem\giftofthegivers.tests\bin\debug\net8.0\giftofthegivers.tests.dll" id="c0568776-f777-6926-ab1b-5d412abb87d8">
+      <Execution id="0d0b7ec5-b424-4f5a-bba2-b4544f8579c4" />
+      <TestMethod codeBase="D:\ROSEBANK\DisasterReliefManagementSystem\GiftOfTheGivers.Tests\bin\Debug\net8.0\GiftOfTheGivers.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="GiftOfTheGivers.Tests.Integration.ReliefProjectWorkflowIntegrationTests" name="CompleteWorkflow_CreateIncidentAndProject_Success" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9807bfe0-a96e-0730-6b36-418f2649f73d" executionId="177636b6-ed02-4bde-97a8-5f5ce3a0a170" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="82046374-2cf9-f31c-a7b4-40daf5c605a5" executionId="b8e924bc-cc92-4d0b-97cd-098d9db93687" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf3880fa-6b1c-8b3e-5e92-4d48d00e5849" executionId="1b14fe1e-2fe4-41fa-913b-e2257e976d32" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7d385040-bebe-9203-8dd1-03fa01cbeed3" executionId="c4490d60-fc42-48a1-8bdb-f18bf44c0ef9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b96e6c19-9d42-7473-5dbe-8acea64edfb0" executionId="7f17a50c-9cdd-47ba-93e7-b7e13a0a54d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2aad0f80-115e-c93d-e747-0ea83d99d5a9" executionId="0f46b458-ce79-4a4c-aea4-944661ea15cb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="217842f8-8fca-3656-96dd-b2a12702e1ba" executionId="90c81b7d-d052-4147-a994-9a98a79cbf24" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c0568776-f777-6926-ab1b-5d412abb87d8" executionId="0d0b7ec5-b424-4f5a-bba2-b4544f8579c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c6cb1809-5991-975d-c039-48d155f227b5" executionId="409dc768-19b2-4faa-a860-3ce1ac510807" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c0e08fe6-4f9c-9982-24b9-42bc1afc2a99" executionId="92c46e62-47b9-4290-9dd0-630aaf08b70d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66ce96b2-fc22-77d7-8711-95fd6c8a1333" executionId="1f9bb68b-7cfd-4957-8106-299d529fec53" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4b17e3f4-e728-7b64-2180-066b0fe7a665" executionId="8598b8ef-db0a-455d-8e82-4cb042a9cf1e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c2315c7-ee2e-cafb-f00d-9d91c9dd595a" executionId="dee0840b-168e-4c00-a0dc-5ed9d82ce95b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="170bb795-af37-a6f8-1025-3cb61c844675" executionId="6430b874-aa08-4759-943d-cce3d44f0805" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48e86a5c-dfe5-1de3-804e-cd7ed1907311" executionId="812536f3-9384-4be8-8696-4464c238b4be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="24e9e519-9c62-3a2a-89f3-2d6cff772e1d" executionId="b3481082-a485-471a-bba1-215e82cf773f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="451ff8d1-86f3-ef60-4c67-c853d3361091" executionId="05e0555f-8739-42b5-8403-e79062035605" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2de42927-c362-53ac-7f4b-fa45d0e24af0" executionId="b397c6b7-be04-4f0f-868c-3678f1de21b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="71b81277-1585-b18f-3a54-c23d366b5b6d" executionId="51bcfab7-72e6-49e9-ae0f-b9530e86d764" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af4b350e-4de6-fc34-ca8b-85df357630ad" executionId="12f72be8-c227-43e2-80fb-a2a240380932" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="123e1200-3858-8d73-42f4-8bade3a41ddf" executionId="5ce0d982-53bd-4964-b276-b8623fed8b44" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0e16282-a7d1-9599-3f66-753a9655c5ce" executionId="9134417e-cdbd-4534-b2eb-3c17738bdbb2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="22" executed="22" passed="22" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 8.0.21)&#xD;
+[xUnit.net 00:00:00.08]   Discovering: GiftOfTheGivers.Tests&#xD;
+[xUnit.net 00:00:00.12]   Discovered:  GiftOfTheGivers.Tests&#xD;
+[xUnit.net 00:00:00.13]   Starting:    GiftOfTheGivers.Tests&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 0 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 0 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 0 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 0 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 3 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 3 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 3 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 3 entities to in-memory store.&#xD;
+info: Microsoft.EntityFrameworkCore.Update[30100]&#xD;
+      Saved 1 entities to in-memory store.&#xD;
+[xUnit.net 00:00:01.15]   Finished:    GiftOfTheGivers.Tests&#xD;
+</StdOut>
+    </Output>
+    <CollectorDataEntries>
+      <Collector agentName="DESKTOP-TR9TESF" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="DESKTOP-TR9TESF\coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

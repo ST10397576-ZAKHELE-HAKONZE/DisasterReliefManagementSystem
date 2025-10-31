@@ -1,42 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<!-- CHANGE THIS FROM net9.0 TO net8.0 -->
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<!-- xUnit Testing Framework -->
 		<PackageReference Include="xunit" Version="2.9.2" />
 		<PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-
 		<!-- Code Coverage -->
 		<PackageReference Include="coverlet.collector" Version="6.0.2" />
-
-		<!-- Web Application Integration Testing -->
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.10" />
-
-		<!-- In-Memory Database for Testing -->
-		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
-
+		<!-- Web Application Integration Testing - CHANGE TO 8.0.x -->
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.11" />
+		<!-- In-Memory Database for Testing - CHANGE TO 8.0.x -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.11" />
 		<!-- Mocking Dependencies -->
 		<PackageReference Include="Moq" Version="4.20.72" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<!-- Reference to Main Web Project -->
 		<ProjectReference Include="..\GiftOfTheGivers.Web\GiftOfTheGivers.Web.csproj" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<Using Include="Xunit" />
 	</ItemGroup>
-
 	<ItemGroup>
 	  <Folder Include="Integration\" />
 	</ItemGroup>
-
 </Project>

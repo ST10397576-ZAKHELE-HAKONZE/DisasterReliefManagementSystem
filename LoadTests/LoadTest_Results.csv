@@ -1,0 +1,8 @@
+Label,# Samples,Average,Median,90% Line,95% Line,99% Line,Min,Max,Error %,Throughput,Received KB/sec,Sent KB/sec
+01 - Home Page,250,7,3,11,14,51,2,414,0.000%,4.95609,38.40,1.30
+02 - View All Donors,250,94,11,18,24,2760,8,3508,0.000%,4.95845,28.86,1.33
+03 - View All Donations,250,17,14,23,26,162,10,266,0.000%,5.27983,55.38,1.43
+04 - View Relief Projects,250,17,16,25,30,40,12,55,0.000%,5.16817,58.06,1.42
+05 - View Incident Reports,250,8,6,12,14,52,5,113,0.000%,5.02220,42.62,2.81
+06 - View Volunteer Assignments,250,13,11,19,22,30,9,60,0.000%,5.05071,35.72,2.41
+TOTAL,1500,26,12,21,24,60,2,3508,0.000%,25.67262,217.58,9.04
